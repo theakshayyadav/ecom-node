@@ -44,7 +44,7 @@ app.get("/", function(req, res){
       app.use("/subscription", require("./routes/subsciption"));     
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3100;
 app.listen(PORT, function(){
           console.log("Welcome e_commerce Server");
 })
