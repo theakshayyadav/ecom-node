@@ -3,6 +3,7 @@ var express= require("express");
 const mongoose = require("mongoose");
 
 var app= express();
+mongoose.connect("mongodb+srv://akshay:Akki0000@cluster0.1bevl.mongodb.net/ecom")
 var jasonparser = body_parser.json();
 app.use(body_parser.json({limit:'50mb'}));
 app.use(body_parser.urlencoded({limit:'50mb', extended: true}));
@@ -42,6 +43,8 @@ app.get("/", function(req, res){
       app.use("/order", require("./routes/order"));     
       app.use("/subscription", require("./routes/subsciption"));     
 
+
+const PORT = process.env.PORT || 3000;
 app.listen(8081, function(){
           console.log("Welcome e_commerce Server");
 })
